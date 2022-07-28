@@ -1,0 +1,30 @@
+// Prompt 1: sumPairs - How do you find all pairs of an integer array whose sum is equal to a given number?
+
+//   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 32, 0, -16, 8]
+
+//   sumPairs(arr, 16) // --> [[8, 8], [14, 2], [0, 16], [1, 15], [32, -16]]
+
+
+
+function somas(nums, target_num) {  
+    let map = [];  
+    let numero = [];  
+
+    for (let i = 0; i < nums.length; i++)  
+    {  
+        if (map[nums[i]] != null)  
+        // what they meant by map[nums[i]]
+        {  
+            index = map[nums[i]];  
+            numero[0] = index+1;  
+            numero[1] = i+1;  
+            break;  
+        }  
+        else  
+        {  
+            map[target_num - nums[i]] = i;  
+        }  
+    }  
+    return numero;  
+    }  
+console.log(somas([10,20,10,40,50,60,70],50));
